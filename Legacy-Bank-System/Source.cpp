@@ -72,11 +72,11 @@ vector<string> SplitString(string& S1, string Delim)
 
 
 
-sClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
+sClient ConvertLinetoRecord(string Line, string Separator = "#//#")
 {
     sClient Client;
     vector<string> vClientData;
-    vClientData = SplitString(Line, Seperator);
+    vClientData = SplitString(Line, Separator);
     Client.AccountNumber = vClientData[0];
     Client.PinCode = vClientData[1];
     Client.Name = vClientData[2];
@@ -93,11 +93,11 @@ sClient ConvertLinetoRecord(string Line, string Seperator = "#//#")
     return Client;
 }
 
-sUser ConvertLinetoRecordUser(string Line, string Seperator = "#//#")
+sUser ConvertLinetoRecordUser(string Line, string Separator = "#//#")
 {
     sUser User;
     vector<string> vUser;
-    vUser = SplitString(Line, Seperator);
+    vUser = SplitString(Line, Separator);
     User.UserName = vUser[0];
     User.Pass = vUser[1];
     try
@@ -112,12 +112,12 @@ sUser ConvertLinetoRecordUser(string Line, string Seperator = "#//#")
     return User;
 }
 
-string ConvertRecordToLineUser(sUser User, string Seperator = "#//#")
+string ConvertRecordToLineUser(sUser User, string Separator = "#//#")
 {
     string stUserRecord = "";
-    stUserRecord += User.UserName + Seperator;
-    stUserRecord += User.Pass + Seperator;
-    stUserRecord += to_string(User.Permissions) + Seperator;
+    stUserRecord += User.UserName + Separator;
+    stUserRecord += User.Pass + Separator;
+    stUserRecord += to_string(User.Permissions) + Separator;
     return stUserRecord;
 }
 void InitializeFiles()
@@ -165,13 +165,13 @@ bool UserExistsByUserName(string UserName, string FileName)
     return false;
 }
 
-string ConvertRecordToLine(sClient Client, string Seperator = "#//#")
+string ConvertRecordToLine(sClient Client, string Separator = "#//#")
 {
     string stClientRecord = "";
-    stClientRecord += Client.AccountNumber + Seperator;
-    stClientRecord += Client.PinCode + Seperator;
-    stClientRecord += Client.Name + Seperator;
-    stClientRecord += Client.Phone + Seperator;
+    stClientRecord += Client.AccountNumber + Separator;
+    stClientRecord += Client.PinCode + Separator;
+    stClientRecord += Client.Name + Separator;
+    stClientRecord += Client.Phone + Separator;
     stClientRecord += to_string(Client.AccountBalance);
     return stClientRecord;
 }
