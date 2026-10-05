@@ -61,6 +61,12 @@ Choose either `Legacy-Bank-System` or `OOP.ATM.System`, then build the C++ sourc
 
 Documentation fixes, portability improvements, tests, and focused code improvements are welcome.
 
+## More Projects by Salekh
+
+- [Banking System C++ CLI](https://github.com/AlakhiarovSalekh/BANKING-SYSTEM-CPP-CLI) — terminal banking app with OpenSSL PIN hashing.
+- [C++ Projects](https://github.com/AlakhiarovSalekh/Cpp-Projects) — data structures, algorithms, and C++ fundamentals.
+- [Expense Tracker C++](https://github.com/AlakhiarovSalekh/Expense-Tracker-Project) — console and Qt expense tracker.
+
 ## Author
 
 **Salekh Alakhiarov** · [GitHub](https://github.com/AlakhiarovSalekh)
