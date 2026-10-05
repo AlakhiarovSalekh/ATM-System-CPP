@@ -1,48 +1,66 @@
-# ATM & Banking System (C++)
+# ATM & Banking System — C++
 
-This repository demonstrates the evolution of a banking system from a simple procedural design to a more advanced Object-Oriented implementation.
+[![C++](https://img.shields.io/badge/C%2B%2B-Banking%20Systems-00599C?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
+[![Stars](https://img.shields.io/github/stars/AlakhiarovSalekh/ATM-System-CPP?style=social)](https://github.com/AlakhiarovSalekh/ATM-System-CPP/stargazers)
 
----
+A C++ repository showing the evolution of a console banking system from a procedural implementation to a more modular object-oriented ATM design.
 
-## 📌 Projects Overview
+## Projects
 
-### 1. Legacy Bank System
-- Simple console-based banking system
-- Built using procedural programming
-- Basic operations (clients, transactions, etc.)
-- Single-file structure (Source.cpp)
+### Legacy Bank System
 
----
+Located in `Legacy-Bank-System/`.
 
-### 2. OOP ATM System
-- Advanced ATM simulation system
-- Built using Object-Oriented Programming (OOP)
-- Modular and scalable design
-- Includes features like:
-  - User authentication
-  - Transactions handling
-  - File-based data storage
-  - Separation of concerns
+- Procedural console design
+- Client and transaction operations
+- File-based program structure
+- Useful for comparing procedural code with the OOP version
 
----
+### OOP ATM System
 
-## 🎯 Purpose of This Repository
+Located in `OOP.ATM.System/`.
 
-This project highlights:
-- The transition from procedural to OOP design
-- Code organization and scalability improvements
-- Real-world system simulation (ATM operations)
+- Object-oriented ATM simulation
+- User authentication
+- Transaction handling
+- File-based persistence
+- Separation of responsibilities across classes/modules
 
----
+## Why this repository
 
-## 🛠 Technologies Used
+The two implementations make it easier to compare how a banking-style application changes when moving from procedural code toward object-oriented organization and reusable components.
+
+## Tech & Concepts
+
 - C++
-- File Handling
-- Object-Oriented Programming (OOP)
+- Object-oriented programming
+- Procedural programming
+- File handling
+- Authentication flows
+- Transaction logic
+- Console applications
 
----
+## Getting Started
 
-## 🚀 Future Improvements
-- Apply design patterns
-- Add database instead of text files
-- Build GUI or Web interface
+```bash
+git clone https://github.com/AlakhiarovSalekh/ATM-System-CPP.git
+cd ATM-System-CPP
+```
+
+Choose either `Legacy-Bank-System` or `OOP.ATM.System`, then build the C++ sources with a compatible compiler or IDE.
+
+## Possible Improvements
+
+- Automated tests
+- Database-backed persistence
+- Cross-platform terminal input
+- GUI or web interface
+- Additional validation and security hardening
+
+## Contributing
+
+Documentation fixes, portability improvements, tests, and focused code improvements are welcome.
+
+## Author
+
+**Salekh Alakhiarov** · [GitHub](https://github.com/AlakhiarovSalekh)
