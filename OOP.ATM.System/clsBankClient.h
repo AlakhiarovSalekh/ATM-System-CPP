@@ -19,26 +19,26 @@ private:
     float _AccountBalance;
     bool _MarkedForDelete = false;
 
-    static clsBankClient _ConvertLinetoClientObject(string Line, string Seperator = "#//#")
+    static clsBankClient _ConvertLinetoClientObject(string Line, string Separator = "#//#")
     {
         vector<string> vClientData;
-        vClientData = clsString::Split(Line, Seperator);
+        vClientData = clsString::Split(Line, Separator);
 
         return clsBankClient(enMode::UpdateMode, vClientData[0], vClientData[1], vClientData[2],
             vClientData[3], vClientData[4], vClientData[5], stod(vClientData[6]));
 
     }
 
-    static string _ConverClientObjectToLine(clsBankClient Client, string Seperator = "#//#")
+    static string _ConverClientObjectToLine(clsBankClient Client, string Separator = "#//#")
     {
 
         string stClientRecord = "";
-        stClientRecord += Client.FirstName + Seperator;
-        stClientRecord += Client.LastName + Seperator;
-        stClientRecord += Client.Email + Seperator;
-        stClientRecord += Client.Phone + Seperator;
-        stClientRecord += Client.AccountNumber() + Seperator;
-        stClientRecord += Client.PinCode + Seperator;
+        stClientRecord += Client.FirstName + Separator;
+        stClientRecord += Client.LastName + Separator;
+        stClientRecord += Client.Email + Separator;
+        stClientRecord += Client.Phone + Separator;
+        stClientRecord += Client.AccountNumber() + Separator;
+        stClientRecord += Client.PinCode + Separator;
         stClientRecord += to_string(Client.AccountBalance);
 
         return stClientRecord;
@@ -151,11 +151,11 @@ private:
 
     struct stTrnsferLogRecord;
 
-    static stTrnsferLogRecord _ConvertTransferLogLineToRecord(string Line, string Seperator = "#//#")
+    static stTrnsferLogRecord _ConvertTransferLogLineToRecord(string Line, string Separator = "#//#")
     {
         stTrnsferLogRecord TrnsferLogRecord;
 
-        vector <string> vTrnsferLogRecordLine = clsString::Split(Line, Seperator);
+        vector <string> vTrnsferLogRecordLine = clsString::Split(Line, Separator);
         TrnsferLogRecord.DateTime = vTrnsferLogRecordLine[0];
         TrnsferLogRecord.SourceAccountNumber = vTrnsferLogRecordLine[1];
         TrnsferLogRecord.DestinationAccountNumber = vTrnsferLogRecordLine[2];
@@ -170,15 +170,15 @@ private:
 
 
     string _PrepareTransferLogRecord(float Amount, clsBankClient DestinationClient,
-        string UserName, string Seperator = "#//#")
+        string UserName, string Separator = "#//#")
     {
         string TransferLogRecord = "";
-        TransferLogRecord += clsDate::GetSystemDateTimeString() + Seperator;
-        TransferLogRecord += AccountNumber() + Seperator;
-        TransferLogRecord += DestinationClient.AccountNumber() + Seperator;
-        TransferLogRecord += to_string(Amount) + Seperator;
-        TransferLogRecord += to_string(AccountBalance) + Seperator;
-        TransferLogRecord += to_string(DestinationClient.AccountBalance) + Seperator;
+        TransferLogRecord += clsDate::GetSystemDateTimeString() + Separator;
+        TransferLogRecord += AccountNumber() + Separator;
+        TransferLogRecord += DestinationClient.AccountNumber() + Separator;
+        TransferLogRecord += to_string(Amount) + Separator;
+        TransferLogRecord += to_string(AccountBalance) + Separator;
+        TransferLogRecord += to_string(DestinationClient.AccountBalance) + Separator;
         TransferLogRecord += UserName;
         return TransferLogRecord;
     }
