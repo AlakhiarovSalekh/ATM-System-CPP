@@ -14,20 +14,20 @@ class clsCurrency
 	string _Country, _CurrencyCode, _CurrencyName;
 	float _Rate;
 
-	static clsCurrency _ConvertLineToCurrencyObject(string Line, string Seperator = "#//#")
+	static clsCurrency _ConvertLineToCurrencyObject(string Line, string Separator = "#//#")
 	{
 		vector <string> vCurrencyDate;
-		vCurrencyDate = clsString::Split(Line, Seperator);
+		vCurrencyDate = clsString::Split(Line, Separator);
 		return clsCurrency(enMode::UpdateMode, vCurrencyDate[0], vCurrencyDate[1],
 			vCurrencyDate[2], stod(vCurrencyDate[3]));
 	}
 
-	static string _ConverCurrencyObjectToLine(clsCurrency Currency, string Seperator = "#//#")
+	static string _ConverCurrencyObjectToLine(clsCurrency Currency, string Separator = "#//#")
 	{
 		string stCurrencyRecord = "";
-		stCurrencyRecord += Currency.Country() + Seperator;
-		stCurrencyRecord += Currency.CurrencyCode() + Seperator;
-		stCurrencyRecord += Currency.CurrencyName() + Seperator;
+		stCurrencyRecord += Currency.Country() + Separator;
+		stCurrencyRecord += Currency.CurrencyCode() + Separator;
+		stCurrencyRecord += Currency.CurrencyName() + Separator;
 		stCurrencyRecord += to_string(Currency.Rate());
 		return stCurrencyRecord;
 	}

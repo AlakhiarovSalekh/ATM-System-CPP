@@ -24,12 +24,12 @@ private:
     bool _MarkedForDelete = false;
 
     struct stLoginRegisterRecord;
-    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(string Line, string Seperator = "#//#")
+    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(string Line, string Separator = "#//#")
     {
         stLoginRegisterRecord LoginRegisterRecord;
 
 
-        vector <string> LoginRegisterDataLine = clsString::Split(Line, Seperator);
+        vector <string> LoginRegisterDataLine = clsString::Split(Line, Separator);
         LoginRegisterRecord.DateTime = LoginRegisterDataLine[0];
         LoginRegisterRecord.UserName = LoginRegisterDataLine[1];
         LoginRegisterRecord.Password = clsUtil::DecryptText(LoginRegisterDataLine[2]);
@@ -39,38 +39,38 @@ private:
 
     }
 
-    string _PrepareLogInRecord(string Seperator = "#//#")
+    string _PrepareLogInRecord(string Separator = "#//#")
     {
         string LoginRecord = "";
-        LoginRecord += clsDate::GetSystemDateTimeString() + Seperator;
-        LoginRecord += UserName + Seperator;
+        LoginRecord += clsDate::GetSystemDateTimeString() + Separator;
+        LoginRecord += UserName + Separator;
         //here we encypt store the encrypted Password not the real one.
-        LoginRecord += clsUtil::EncryptText(Password) + Seperator;
+        LoginRecord += clsUtil::EncryptText(Password) + Separator;
         LoginRecord += to_string(Permissions);
         return LoginRecord;
     }
 
-    static clsUser _ConvertLinetoUserObject(string Line, string Seperator = "#//#")
+    static clsUser _ConvertLinetoUserObject(string Line, string Separator = "#//#")
     {
         vector<string> vUserData;
-        vUserData = clsString::Split(Line, Seperator);
+        vUserData = clsString::Split(Line, Separator);
 
         return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
             vUserData[3], vUserData[4], clsUtil::DecryptText(vUserData[5]), stoi(vUserData[6]));
 
     }
 
-    static string _ConverUserObjectToLine(clsUser User, string Seperator = "#//#")
+    static string _ConverUserObjectToLine(clsUser User, string Separator = "#//#")
     {
 
         string UserRecord = "";
-        UserRecord += User.FirstName + Seperator;
-        UserRecord += User.LastName + Seperator;
-        UserRecord += User.Email + Seperator;
-        UserRecord += User.Phone + Seperator;
-        UserRecord += User.UserName + Seperator;
+        UserRecord += User.FirstName + Separator;
+        UserRecord += User.LastName + Separator;
+        UserRecord += User.Email + Separator;
+        UserRecord += User.Phone + Separator;
+        UserRecord += User.UserName + Separator;
         //here we encypt store the encrypted Password not the real one.
-        UserRecord += clsUtil::EncryptText(User.Password) + Seperator;
+        UserRecord += clsUtil::EncryptText(User.Password) + Separator;
         UserRecord += to_string(User.Permissions);
 
         return UserRecord;
