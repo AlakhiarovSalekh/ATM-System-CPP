@@ -61,7 +61,7 @@ public:
             return char(RandomNumber(48, 57));
             break;
         }
-    defualt:
+    default:
         {
             return char(RandomNumber(65, 90));
             break;
