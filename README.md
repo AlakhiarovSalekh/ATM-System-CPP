@@ -1,4 +1,4 @@
-# ATM & Banking System — C++
+# C++ ATM & Banking System — Procedural vs OOP
 
 [![C++](https://img.shields.io/badge/C%2B%2B-Banking%20Systems-00599C?logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![Stars](https://img.shields.io/github/stars/AlakhiarovSalekh/ATM-System-CPP?style=social)](https://github.com/AlakhiarovSalekh/ATM-System-CPP/stargazers)
